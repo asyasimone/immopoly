@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr-FR" class="error-body">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page 404 Immopoly</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 101%;
+      background-image: url('https://www.cheaplandfarm.com/wp-content/uploads/2017/11/IMG_0123.jpg'); /* Remplacez par l'URL de votre image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+    .background-image::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    .dialog {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .dialog-content {
+      text-align: center;
+    }
+    .title {
+      font-size: 10rem;
+      margin: 0;
+      font-family: Gotham, sans-serif;
+      line-height: 10rem;
+      color: #ffffff;
+    }
+    h2 {
+      font-size: 2rem;
+      margin: 0;
+      font-family: Gotham, sans-serif;
+      line-height: 2rem;
+      color: #ffffff;
+    }
+    p {
+      font-size: 1rem;
+      margin: 0;
+      font-family: Josefin Sans, sans-serif;
+      margin-top: 10px;
+      color: #ffffff;
+      margin-bottom: 60px;
+    }
+    .error-body {
+      height: 100vh;
+    }
+  </style>
+  </head>
+  <body class="error-body">
+    <div class="background-image"></div>
+    <div class="dialog">
+      <div class="dialog-content">
+        <p>Erreur</p>
+        <h1 class="title">404</h1>
+        <h2>La page que vous recherchez n'existe pas...</h2>
+        <p>Vous avez peut-être mal écrit l'adresse, ou la page a été déplacée.</p>
+      </div>
+    </div>
+  </body>
+</html>
