@@ -1,0 +1,62 @@
+<div class="edit-container">
+  <div>
+    <h1 class="edit-page-h1">Edit Property</h1>
+  </div>
+  <div class="edit-form-container">
+    <div class="edit-h3">
+    </div>
+  <div class="edit-form">
+  <h3 class="edit-page-h3"><%= @property.address  %></h3>
+      <%= form_with model: @property do |f| %>
+      <div class="edit-property-address">
+        <h2></h2>
+      </div>
+      <div>
+        <%= f.label :Surface_terrain %>
+      </div>
+      <div>
+        <%= f.number_field :nb_dwelling, id: "edit-input"%>
+      </div>
+      <div>
+        <%= f.label :area_sqm_land %>
+      </div>
+      <div>
+        <%= f.number_field :area_sqm_land, id: "edit-input" %>
+      </div>
+      <div>
+        <%= f.label :Surface_habitable %>
+      </div>
+      <div>
+        <%= f.number_field :area_sqm_livable, id: "edit-input" %>
+      </div>
+      <div>
+        <%= f.label :Ratio_surface_deplancher %>
+      </div>
+      <div>
+        <%= f.number_field :floor_area_ratio, id: "edit-input" %>
+      </div>
+      <div>
+        <%= f.label :building_height_floors %>
+      </div>
+      <div>
+        <%= f.number_field :building_height_floorsg, id: "edit-input" %>
+      </div>
+      <div >
+        <%= f.label :nb_rooms_per_dwelling %>
+      </div>
+      <div>
+        <%= f.number_field :nb_rooms_per_dwelling, id: "edit-input" %>
+      </div>
+      <div class="edit-input">
+        <%= f.label :energy_class %>
+      </div>
+      <div class="edit-input">
+        <%= f.number_field :energy_class, id: "edit-input" %>
+      </div>
+      <div>
+        <%= f.submit "Soumettre", class: "edit-input-button" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Immopoly provides a user-friendly tool to maximize the buildable area, property value while ensuring local regulation compliance.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+  <%= javascript_importmap_tags %>
+
+
+  <!-- Include Font Awesome for search icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://unpkg.com/maplibre-gl@3.x/dist/maplibre-gl.css" rel="stylesheet" />
+
+  <!-- Include jQuery from CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <%= render "shared/navbar" %>
+  <%= render "shared/flashes" %>
+
+  <div class="body-container">
+    <%= yield %>
+
+<%= render 'layouts/footer' %>
+  </body>
+  </div>
+
+
+  <script>
+
+    $(document).ready(function() {
+      $('#address-search').on('input', function() {
+        var query = $(this).val();
+
+        if (query.length < 3) {
+          $('#autocomplete-results').empty();
+          return;
+        }
+
+        $.ajax({
+          url: '/addresses/autocomplete',
+          data: { query: query },
+          success: function(data) {
+            $('#autocomplete-results').empty();
+            data.forEach(function(item) {
+              $('#autocomplete-results').append('<li class="list-group-item">' + item.label + '</li>');
+            });
+          }
+        });
+      });
+
+      // Handle click on autocomplete result
+      $('#autocomplete-results').on('click', 'li', function() {
+        $('#address-search').val($(this).text());
+        $('#autocomplete-results').empty();
+      });
+    });
+  </script>
+</body>
+</html>

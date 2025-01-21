@@ -1,0 +1,38 @@
+
+.mapboxgl-popup {
+  max-width: 300px; /* Augmentez la largeur si nécessaire */
+  max-height: 350px; /* Augmentez la hauteur si nécessaire */
+  background-color: white;
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);/* Ombre plus marquée */
+  font-family: 'Gotham', sans-serif;
+  padding: 10px; /* Espacement interne */
+  overflow: auto; /* Ajoute un défilement si le contenu dépasse la taille */
+}
+
+#marker-pop-up-address,
+#marker-pop-up-owner{
+  font-family : 'GothamBold', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.mapboxgl-popup-content {
+ height: 100%;
+ width: 100%;/* Fond blanc pour le contenu */
+}
+
+.mapboxgl-popup-close-button {
+  background-color: #f5f5f5; /* Couleur de fond du bouton de fermeture */
+   /* Bouton rond */
+  width: 20px; /* Largeur du bouton */
+  height: 20px; /* Hauteur du bouton */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd; /* Bordure légère */
+}
+
+.mapboxgl-popup-close-button:hover {
+  background-color: #ddd; /* Couleur de fond au survol */
+}

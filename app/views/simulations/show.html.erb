@@ -1,0 +1,92 @@
+<div class="container-simulation">
+  <div class = "text-center mb-3">
+    <h2 class="h2-show-simulation"><i class="fas fa-project-diagram"></i> Le potentiel de votre projet en chiffres</h2>
+  </div>
+
+  <div class="simulation-container">
+    <div class="simulation-row">
+      <div class="custom-simulation-show-card-size-type">
+        <p><strong>Valeur<br>foncière</strong><p>
+      </div>
+      <div class="custom-simulation-show-card-size-kpi">
+        <p><strong><%= price_total_livable = number_with_precision(@simulation.price_total_livable, precision: 0, delimiter: ' ') %>€</strong></p>
+      </div>
+      <div class="custom-simulation-show-card-size-text">
+        <p>
+          soit un potentiel commercial de <strong><%= number_with_precision(@simulation.price_total_livable / (@city.price_per_sqm_livable * @project.area_sqm_livable), precision: 1, delimiter: ' ') %>x</strong> la valeur initiale de votre bien !
+        </p>
+      </div>
+    </div>
+
+    <div class="simulation-row">
+      <div class="custom-simulation-show-card-size-type">
+        <p><strong>Valeur locative<br>annualisée</strong><p>
+      </div>
+      <div class="custom-simulation-show-card-size-kpi">
+        <p><strong><%= price_total_rental = number_with_precision(@simulation.price_total_rental, precision: 0, delimiter: ' ') %>€</strong></p>
+      </div>
+      <div class="custom-simulation-show-card-size-text">
+        <p>
+          soit un taux de rendement brut de <strong><%= number_with_precision(@simulation.price_total_rental / @simulation.price_total_livable * 100, precision: 2, delimiter: ' ') %>%</strong>
+          contre <%= rental_return_project = number_with_precision((@city.price_per_sqm_rental * 12) / @city.price_per_sqm_livable * 100, precision: 2, delimiter: ' ') %>% initialement !
+        </p>
+      </div>
+    </div>
+
+    <div class="simulation-row">
+      <div class="custom-simulation-show-card-size-type">
+        <p><strong>Retour sur<br>investissement</strong><p>
+      </div>
+      <div class="custom-simulation-show-card-size-kpi">
+        <p>
+          <% roi = ((@simulation.price_total_livable - @simulation.cost_destruction) / @simulation.cost_destruction - 1) * 100 %>
+          <strong>
+            <%= roi > 0 ? "+" : roi < 0 ? "-" : "" %><%= number_with_precision(roi.abs, precision: 0, delimiter: ' ') %>%
+          </strong>
+        </p>
+      </div>
+      <div class="custom-simulation-show-card-size-text">
+        <p>
+          sur la base d'un investissement initial de <strong><%= number_with_precision(@simulation.cost_destruction, precision: 0, delimiter: ' ') %>€</strong>
+          (démolition et construction) et représentant une plus-value immobilière potentielle de
+          <strong>+<%= number_with_precision(@simulation.price_total_livable - @simulation.cost_destruction, precision: 0, delimiter: ' ') %>€</strong>
+          sur une période pouvant aller de 1 à 2 ans seulement !
+        </p>
+      </div>
+    </div>
+
+    <div class="simulation-row">
+      <div class="custom-simulation-show-card-size-type">
+        <p><strong>Surface<br>habitable</strong><p>
+      </div>
+      <div class="custom-simulation-show-card-size-kpi">
+        <p>
+          <strong><%= number_with_precision(@simulation.area_sqm_livable, precision: 0, delimiter: ' ') %> m²</strong>
+          (<%= @simulation.area_sqm_livable - @simulation.project.area_sqm_livable >= 0 ? "+" : "" %><%= number_with_precision(@simulation.area_sqm_livable - @simulation.project.area_sqm_livable, precision: 0, delimiter: ' ') %> m²)
+        </p>
+      </div>
+      <div class="custom-simulation-show-card-size-text">
+        <p>
+          en appliquant les limites fixées par le plan local d'urbanisme de la ville: un coefficient d'occupation des sols et un nombre maximal de niveaux supplémentaires.
+        </p>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <%= link_to 'Retour au Projet', project_path(@simulation.project), class: 'button-return-simul' %>
+      <%= form_with model: [@simulation.project, @simulation], url: save_project_simulation_path(@simulation.project, @simulation), method: :post, local: true do |form| %>
+        <%= form.hidden_field :area_sqm_livable %>
+        <%= form.hidden_field :price_total_livable %>
+        <%= form.hidden_field :price_total_rental %>
+        <%= form.hidden_field :cost_destruction %>
+        <%= form.hidden_field :area_sqm_land %>
+        <%= form.hidden_field :floor_area_ratio %>
+        <%= form.hidden_field :area_sqm_construction %>
+        <%= form.hidden_field :area_sqm_common %>
+        <%= form.hidden_field :building_height_floors %>
+        <%= form.submit 'Sauvegardez votre simulation', class: 'btn-save-simulation' %>
+      <% end %>
+    </div>
+  </div>
+</div>

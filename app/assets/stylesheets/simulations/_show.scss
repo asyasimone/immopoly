@@ -1,0 +1,204 @@
+.container-simulation {
+  background-color: #F5F5F5;
+  width: 100%;
+  height: 100%;
+}
+
+.property-show-h1 {
+  text-align: center;
+  border-bottom: 5px solid #3BFFDB;
+  width: 534px;
+  margin-left: 30%;
+  padding-top: 100px;
+  font-family: 'Gotham';
+}
+
+.info-box, .last-info-box, .custom-simulation-show-card-size {
+  margin-top: 15px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.last-info-box {
+  margin-bottom: 15px;
+}
+
+.return-to-dashboard-button {
+  border-radius: 5px;
+  position: relative;
+  padding: 47px;
+}
+
+.button-return-simul {
+  color: black;
+  border: 2px solid black;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 15px 30px;
+  margin: 0px;
+  border-radius: 5px;
+}
+
+.property-show-address {
+  font-family: 'Gotham';
+  font-size: 25px;
+  border-bottom: 2px solid #3BFFDB;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.simulation-info-container {
+  margin-bottom: 50px;
+}
+
+.dashboard-property-box {
+  width: 50%;
+  height: auto;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+.simulation-container {
+  width: 100%;
+  padding: 30px 60px; /* Added padding on the sides */
+  padding-bottom: 40px;
+
+  // h2 {
+  //   text-align: center;
+  //   margin-bottom: 20px;
+  //   font-size: 1.5rem;
+  //   color: #3F3F3F;
+  // }
+}
+
+.simulation-row {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px; /* Adds space between rows */
+}
+
+.custom-simulation-show-card-size-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  padding: 10px;
+  border: 1px solid #ddd; /* Lighter border for a cleaner look */
+  border-radius: 5px; /* Rounded corners */
+  background-color: white; /* Light background for better readability */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-simulation-show-card-size-text {
+  flex: 1;
+  max-width: 60%; /* Ensures it takes half of the container width */
+  margin-right: 10px; /* Adds space between columns */
+}
+
+.custom-simulation-show-card-size-text p {
+  margin: 5px 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.custom-simulation-show-card-size-kpi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  padding: 10px;
+  border: 1px solid black; /* Lighter border for a cleaner look */
+  border-radius: 5px; /* Rounded corners */
+  background-color: white;
+  font-size: 25px;
+  margin-bottom: none;
+}
+
+.custom-simulation-show-card-size-kpi {
+  flex: 1;
+  max-width: 20%; /* Ensures it takes half of the container width */
+  margin-right: 10px; /* Adds space between columns */
+}
+
+.custom-simulation-show-card-size-kpi p {
+  margin: 5px 0;
+  text-align: center;
+}
+
+.custom-simulation-show-card-size-type {
+  display: flex;
+  // flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  padding: 10px;
+  border: 1px solid #00FFCC; /* Lighter border for a cleaner look */
+  border-radius: 5px; /* Rounded corners */
+  background-color: white;
+  font-size: 25px;
+  margin-bottom: none;
+}
+
+.custom-simulation-show-card-size-type {
+  flex: 1;
+  max-width: 20%; /* Ensures it takes half of the container width */
+  margin-right: 10px; /* Adds space between columns */
+}
+
+.custom-simulation-show-card-size-type p {
+  margin: 5px 0;
+  text-align: center;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.return-to-dashboard-button {
+  background-color: #27CE8D;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.btn-save-simulation {
+  background-color: #27CE8D;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.h2-show-simulation {
+  color: black;
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  margin: 15px auto;
+  text-align: center;
+  margin: 50px auto;
+  font-size: calc(1.375rem + 1.5vw);
+}
+
+.h2-show-simulation::after {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #00ffcc; /* couleur verte */
+  position: absolute;
+  bottom: -10px; /* ajustez selon vos besoins */
+  left: 0;
+}

@@ -1,0 +1,70 @@
+.page-show-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 50px auto;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.h2-show-project {
+  color: black;
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  margin: 15px auto;
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 1.3em;
+}
+
+.h2-show-project::after {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #00ffcc; /* couleur verte */
+  position: absolute;
+  bottom: -10px; /* ajustez selon vos besoins */
+  left: 0;
+}
+
+.p-show-project{
+  font-family: 'Gotham', sans-serif;
+  font-size: 1.2em;
+
+  color: black;
+  margin-bottom: 15px;
+
+}
+
+.bouton-simulation-launch-center{
+  display: flex;
+  justify-content: center;
+  margin: 5px auto;
+}
+
+.popover {
+  background-color: #ffffff !important; /* Couleur de fond */
+  color: #000000; /* Couleur du texte */
+  border: 1px solid #dddddd; /* Couleur de la bordure */
+}
+.popover-header {
+  background-color: #f8f9fa; /* Couleur de fond de l'en-tête du popover */
+  color: #000000; /* Couleur du texte de l'en-tête */
+  font-family: 'Gotham', sans-serif;
+}
+.popover-body {
+  color: #000000; /* Couleur du texte du corps du popover */
+}
+
+.form-simulation-label{
+  font-family: 'Gotham', sans-serif;
+  font-size: 1.2em;
+  color: black;
+}
+
+.custom-project-show-card-height{
+  height: 400px;
+}

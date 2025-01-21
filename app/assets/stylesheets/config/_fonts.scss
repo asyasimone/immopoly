@@ -1,0 +1,18 @@
+
+// Import Google fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+// Define fonts for body and headers
+$body-font: "Josefin Sans", "sans-serif";
+$headers-font: "Gotham", "sans-serif";
+
+// To use a font file (.woff) uncomment following lines
+@font-face {
+  font-family: "Gotham";
+  src: font-url('Gotham.eot');
+  src: font-url('Gotham.eot?#iefix') format('embedded-opentype'),
+       font-url('Gotham.woff') format('woff'),
+       font-url('Gotham.ttf') format('truetype');
+}
+$my-font: "Gotham";

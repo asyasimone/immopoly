@@ -1,0 +1,328 @@
+h1.index-h1 {
+  color: black;
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  margin: 50px auto;
+  text-align: center;
+}
+
+h1.index-h1::after {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #00ffcc; /* couleur verte */
+  position: absolute;
+  bottom: -5px; /* ajustez selon vos besoins */
+  left: 0;
+}
+
+.card-title,
+
+.d-flex div {
+  font-family: $body-font;
+}
+
+.bg-custom {
+  background-color: #DCFFF3; /* Remplacez par votre couleur hexadécimale */
+}
+
+.btn-custom-text{
+  color: white;
+  font-family: $body-font;
+
+
+
+}
+
+.modal-title{
+  font-family: 'Gotham' , sans-serif;
+}
+
+
+h1.title-property-new {
+  color: black;
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  margin: 50px auto;
+  text-align: center;
+}
+
+h1.title-property-new::after {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #00ffcc; /* couleur verte */
+  position: absolute;
+  bottom: -5px; /* ajustez selon vos besoins */
+  left: 0;
+}
+
+#title-container-property-new {
+  text-align: center;
+}
+
+.card-map-form {
+  display: flex;
+
+  gap: 20px; /* Ajustez l'espace entre les éléments */
+}
+
+#home-map {
+  flex: 1;
+  width: 40%; /* Vous pouvez ajuster ce pourcentage selon vos besoins */
+
+
+  border-radius: 10px;
+}
+
+.card-simple-form {
+  flex: 1;
+  width: 50%;
+  height: auto; /* Vous pouvez ajuster ce pourcentage selon vos besoins */
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin : auto;
+
+}
+
+h3.title-property-form {
+  color: black;
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  margin: 50px auto;
+  text-align: center;
+}
+
+h4.title-property-form {
+  color: black;
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  margin:auto;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+//h3.title-property-form::after {
+ // content: ' ';
+  //display: block;
+ // width: 100%;
+  //height: 4px;
+ // background-color: #00ffcc; /* couleur verte */
+  //position: absolute;
+  //bottom: -5px; /* ajustez selon vos besoins */
+ // left: 0;
+//}
+
+.search-bar-index {
+  width: 640px;
+  display: flex;
+  position: relative;
+
+}
+
+/* Style de la fenêtre de défilement */
+.index-scroll {
+  height: 450px; /* Hauteur définie directement */
+  overflow-y: scroll; /* Activer le défilement vertical */
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 3px inset;
+  background: rgb(242, 242, 242);
+  transition: all 0.3s ease 0s;
+  border-right: 1px solid rgb(229, 229, 229);
+  border-radius: 10px; /* Bord arrondi pour l'élément */
+  padding: 10px; /* Ajouter du padding pour éviter que le contenu touche les coins */
+}
+
+/* Personnalisation de la barre de défilement */
+.index-scroll::-webkit-scrollbar {
+  width: 12px; /* Largeur de la barre de défilement */
+}
+
+.index-scroll::-webkit-scrollbar-track {
+  background: rgb(242, 242, 242); /* Couleur de la piste de défilement */
+  border-radius: 10px; /* Bord arrondi pour la piste */
+}
+
+.index-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5); /* Couleur de la poignée de défilement */
+  border-radius: 10px; /* Bord arrondi pour la poignée */
+}
+
+
+.index-card {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+#index-card-h3{
+  color: black;
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  margin-left: 470px;
+  text-align: center;
+}
+
+#index-card-h3::after {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #00ffcc; /* couleur verte */
+  position: absolute;
+  bottom: -2px; /* ajustez selon vos besoins */
+  left: 0;
+}
+
+.form-group {
+  border-radius: 10px;
+  background-color: #DCFFF3;
+}
+
+.checkbox-container {
+    margin-left:  auto;
+    margin-top: auto;
+    margin-bottom: 25px;
+    margin-right: 20px;
+}
+
+/* Style pour la case de la checkbox */
+.checkbox-container input[type="checkbox"] {
+  appearance: none; /* Supprimer le style par défaut */
+  -webkit-appearance: none; /* Supprimer le style par défaut pour WebKit */
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000000; /* Bord de la checkbox */
+  border-radius: 5px; /* Bord arrondi */
+  background-color: #ffffff; /* Fond de la checkbox */
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Style pour le checkmark */
+.checkbox-container input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background-color: #00FFCC; /* Couleur du checkmark */
+  transform: translate(-50%, -50%) scale(0); /* Masquer le checkmark par défaut */
+  border-radius: 3px; /* Bord arrondi du checkmark */
+  transition: transform 0.3s ease;
+}
+
+/* Style lorsque la checkbox est cochée */
+.checkbox-container input[type="checkbox"]:checked::after {
+  transform: translate(-50%, -50%) scale(1); /* Afficher le checkmark */
+}
+.property-card-info{
+  margin-right: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #dcfff3;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.card-title {
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  color: black;
+}
+.btn-custom-size {
+  padding: 10px 20px; /* Ajustez la taille du padding selon vos besoins */
+  font-size: 20px;
+  margin-left: 30px;
+  border-radius: 10px;   /* Ajustez la taille de la police selon vos besoins */
+}
+
+.modal-property-card{
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#modal-property-list-title{
+  color: black;
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  margin-top: 40px;
+  margin-left: 75px;
+  margin-bottom: 20px;
+}
+
+#exampleModalLabel{
+  color: black;
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+
+}
+
+.btn-icon {
+   /* Couleur de fond du bouton */
+  border: none; /* Supprimer la bordure par défaut */
+  border-radius: 50%; /* Bord arrondi pour un style circulaire */
+  padding: 5px; /* Espacement interne autour de l'icône */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* Curseur pointer pour indiquer que c'est cliquable */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 40px;
+}
+
+.btn-icon:hover {
+  background-color: #636363; /* Couleur de fond au survol */
+}
+
+.btn-icon:focus {
+  outline: none; /* Supprimer le contour de focus par défaut */
+  box-shadow: 0 0 0 3px rgb(87, 87, 87); /* Ombre portée pour l'état de focus */
+}
+
+.btn-icon i {
+  color: #ffffff; /* Couleur de l'icône */
+}
+
+.prop-modal-btn-black{
+  background-color: #000000; /* Couleur de fond noire */
+  color: #ffffff; /* Couleur du texte blanche */
+  border: 1px solid #000000;
+}
+
+.custom-project-modal-width {
+  max-width: 500px; /* Largeur maximale du modal */
+}
+
+
+.custom-city-select{
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}

@@ -1,0 +1,96 @@
+<div class="dashboard-container">
+  <h1 class="dashboard-h1">Tableau de bord
+</h1>
+  <div class="dashboard-container">
+    <div class="dashboard-project-container">
+      <h2 class="dashboard-second-header"><i class="fa-solid fa-diagram-project"></i> Mes projets</h2>
+      <div>
+        <!-- Slider main container -->
+          <div id="projectscarousel" data-bs-theme="dark" class="carousel slide">
+            <!-- Additional required wrapper -->
+            <div class="carousel-inner">
+              <% @projects.each_slice(3).with_index do |package, index| %>
+                <!-- Slides -->
+                <div class="carousel-item <%= 'active' if index == 0 %>">
+                  <div class="d-flex justify-content-around">
+                    <% package.each do |project|%>
+                      <div class="dashboard-project-card">
+                        <h4 class="dashboard-project-name"><%= project.project_name %></h4>
+                        <ul class="dashboard-list">
+                          <li class="dashboard-info">Terrain : <%= number_with_precision(project.area_sqm_land, precision: 0, delimiter: ',') %> m²</li>
+                          <li class="dashboard-info">Habitable : <%= number_with_precision(project.area_sqm_livable, precision: 0, delimiter: ',') %> m²</li>
+                          <li class="dashboard-info">(COS) : <%= project.floor_area_ratio %></li>
+                        </ul>
+                        <%= link_to 'Accéder au détail', project_path(project), class: 'dashboard-project-details-button'%>
+                        <!-- Simulation scroll -->
+                        <div class="dashboard-scroll-card">
+                          <h4 class="dashboard-simulation">Dernière estimation foncière et locative</h4>
+                          <div class="dashboard-simulation-section-scroll card-body bg-white">
+                            <% @projects.each do |project| %>
+                              <% project.simulations.each do |simulation| %>
+                                <div class="dashboard-simulation-info">
+                                  <p><i class="fa-solid fa-arrow-trend-up"></i> <strong><%= number_with_precision(simulation.price_total_livable, precision: 0, delimiter: ' ') %> €</strong></p>
+                                  <%= link_to project_simulation_path(project, simulation), class: 'dashboard-simulation-details-button' do%>
+                                    <i class="fa-solid fa-eye"></i>
+                                  <% end %>
+                                </div>
+                              <% end %>
+                            <% end %>
+                          </div>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectscarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectscarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+      </div>
+    </div>
+    <div class="dashboard-property-container">
+      <h2 class="dashboard-second-header"><i class="fa-solid fa-house-user"></i> Mes Propriétes</h2>
+      <div>
+        <div  id="propertiescarousel" data-bs-theme="dark" class="carousel slide">
+          <div class="carousel-inner">
+            <% @properties.each_slice(3).with_index do |package, index| %>
+              <div class="carousel-item d-flex justify-content-around <%= 'active' if index == 0 %>">
+                <% package.each do |property| %>
+                  <div class="dashboard-property-card">
+                      <h4 class="dashboard-property-name"><%= property.address %></h4>
+                      <ul class="dashboard-list">
+                        <li class="dashboard-info">Terrain : <%= number_with_precision(property.area_sqm_land, precision: 0, delimiter: ',') %> m²</li>
+                        <li class="dashboard-info">Habitable : <%= number_with_precision(property.area_sqm_livable, precision: 0, delimiter: ',') %> m²</li>
+                        <li class="dashboard-info">(COS) : <%= property.floor_area_ratio %></li>
+                      </ul>
+                      <%= link_to 'Accéder au détail', property_path(property), class: 'dashboard-details-button'%>
+                      <%= link_to 'Modifier', edit_property_path(property), class: 'dashboard-modify-button'%>
+                      <%= link_to property_path(property),data: {turbo_method: :delete, turbo_confirm: 'Vous etes sur?' }, class: 'dashboard-delete-button' do %>
+                        <i class="fa-solid fa-trash-can"></i>
+                      <% end %>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#propertiescarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true" style="margin-bottom: 115px"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#propertiescarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true" style="margin-bottom: 115px"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
